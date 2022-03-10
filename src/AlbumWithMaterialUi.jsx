@@ -68,50 +68,51 @@ const AlbumWithMaterialUi = () => {
           </Grid>
         </Typography>
       </Container>
-      <Grid
-        container
-        spacing={3}
-        sx={{
-          maxWidth: { xs: "90%", md: "80%", lg: "70%" },
-          mx: "auto",
-          mt: 4,
-        }}
-      >
-        {array?.map((_, index) => (
-          <Grid item xs={12} sm={12} md={6} lg={4} key={index}>
-            <Card>
-              <CardMedia
-                component="img"
-                image="	https://source.unsplash.com/random"
-                height="250"
-                alt="album photo"
-              ></CardMedia>
-              <CardContent>
-                <Typography variant="h4" align="left">
-                  Heading
-                </Typography>
-                <Typography
-                  variant="body1"
-                  fontSize="large"
-                  marginTop="17px"
-                  align="left"
-                >
-                  This is a media card. You can use this section to describe the
-                  content.
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button variant="text" size="large" sx={{ mx: 2, mr: 3 }}>
-                  VIEW
-                </Button>
-                <Button variant="text" size="large">
-                  EDIT
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <Container sx={{ py: 8 }} maxWidth="md">
+        <Grid container spacing={4}>
+          {array?.map((_, index) => (
+            <Grid item xs={12} sm={12} md={6} lg={4} key={index}>
+              <Card
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image="	https://source.unsplash.com/random"
+                  height="250"
+                  alt="album photo"
+                ></CardMedia>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography variant="h4" align="left">
+                    Heading
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    fontSize="large"
+                    marginTop="17px"
+                    align="left"
+                  >
+                    This is a media card. You can use this section to describe
+                    the content.
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button variant="text" size="large" sx={{ mx: 2, mr: 3 }}>
+                    VIEW
+                  </Button>
+                  <Button variant="text" size="large">
+                    EDIT
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
       <Box component="footer" sx={{ maxWidth: 1, my: 12 }}>
         <Typography variant="h6" align="center" color="textSecondary">
           Something here to give the footer a purpose!
